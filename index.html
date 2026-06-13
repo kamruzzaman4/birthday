@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Happy Birthday, Farhan! 🎂</title>
+<meta name="description" content="A special birthday celebration for Farhan!" />
+<style>
+  :root {
+    --bg1: #0b0026;
+    --bg2: #3a0066;
+    --bg3: #ff2e93;
+    --gold: #ffd86b;
+    --text: #fff;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 800px at 10% 10%, #4b0082 0%, transparent 60%),
+      radial-gradient(1000px 700px at 90% 90%, #ff2e93 0%, transparent 55%),
+      linear-gradient(135deg, var(--bg1), var(--bg2));
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  /* Floating balloons background */
+  .sky {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .balloon {
+    position: absolute;
+    bottom: -140px;
+    width: 46px;
+    height: 58px;
+    border-radius: 50%;
+    opacity: 0.85;
+    animation: rise linear infinite;
+    box-shadow: inset -6px -10px 0 rgba(0,0,0,.15);
+  }
+  .balloon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 1px;
+    height: 80px;
+    background: rgba(255,255,255,.4);
+    transform: translateX(-50%);
+  }
+  @keyframes rise {
+    0% { transform: translateY(0) rotate(0); opacity: 0; }
+    10% { opacity: 0.9; }
+    100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
+  }
+  /* 14 balloons with hand-tuned positions/colors/speeds */
+  .b1 { left: 5%; background: #ff2e93; animation-duration: 14s; animation-delay: 0s; }
+  .b2 { left: 12%; background: #ffd86b; animation-duration: 11s; animation-delay: 2s; transform: scale(.8); }
+  .b3 { left: 20%; background: #7ad7ff; animation-duration: 16s; animation-delay: 4s; transform: scale(1.1); }
+  .b4 { left: 28%; background: #b388ff; animation-duration: 12s; animation-delay: 1s; }
+  .b5 { left: 36%; background: #7CFFB2; animation-duration: 15s; animation-delay: 3s; transform: scale(.9); }
+  .b6 { left: 44%; background: #ff7ab6; animation-duration: 13s; animation-delay: 5s; }
+  .b7 { left: 52%; background: #ffd86b; animation-duration: 17s; animation-delay: 0s; transform: scale(1.2); }
+  .b8 { left: 60%; background: #ff2e93; animation-duration: 10s; animation-delay: 6s; transform: scale(.7); }
+  .b9 { left: 68%; background: #7ad7ff; animation-duration: 14s; animation-delay: 2s; }
+  .b10 { left: 76%; background: #b388ff; animation-duration: 12s; animation-delay: 4s; transform: scale(1.05); }
+  .b11 { left: 84%; background: #7CFFB2; animation-duration: 16s; animation-delay: 1s; transform: scale(.85); }
+  .b12 { left: 92%; background: #ff7ab6; animation-duration: 13s; animation-delay: 3s; }
+  .b13 { left: 15%; background: #ffd86b; animation-duration: 18s; animation-delay: 7s; transform: scale(.95); }
+  .b14 { left: 65%; background: #ff2e93; animation-duration: 11s; animation-delay: 8s; transform: scale(1.15); }
+
+  /* Main Wrapper */
+  .wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .title {
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: clamp(32px, 6vw, 48px);
+    background: linear-gradient(90deg, #ffd86b, #ff7ab6, #ffd86b);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 4px 20px rgba(255, 120, 200, 0.3);
+    animation: shine 5s linear infinite, pop 0.9s ease-out both;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .name {
+    font-size: clamp(40px, 9vw, 64px);
+    font-weight: 900; letter-spacing: 0.05em;
+    background: linear-gradient(180deg, #fff, #ffd86b 60%, #ff2e93);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 12px rgba(255, 46, 147, 0.4));
+    animation: pop 1.1s 0.15s ease-out both;
+    line-height: 1.1;
+  }
+
+  .sub {
+    font-size: clamp(12px, 3.2vw, 15px);
+    color: #ffe9f4; opacity: 0.9; max-width: 500px;
+    animation: fadeUp 1s 0.4s both;
+    line-height: 1.3;
+  }
+
+  .cake {
+    font-size: clamp(36px, 8vw, 48px);
+    animation: float 3.6s ease-in-out infinite;
+    filter: drop-shadow(0 6px 12px rgba(255, 180, 80, 0.4));
+    margin: 6px 0;
+  }
+
+  /* Wishes Container Card */
+  .wish-container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 250px;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    animation: fadeUp 1s 0.8s both;
+  }
+
+  .wish {
+    font-size: clamp(12px, 3.2vw, 15px);
+    line-height: 1.4;
+    color: #ffe9f4;
+    margin-bottom: 4px;
+  }
+
+  /* Slideshow Stage */
+  .stage {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4/3;
+    position: relative;
+    background: transparent;
+    margin: 4px auto 0;
+  }
+
+  .slide {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1.2s ease-in-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* 1. Polaroid Theme */
+  .slide.style-polaroid {
+    background-color: #fff;
+    background-clip: content-box;
+    background-origin: content-box;
+    padding: 10px 10px 42px 10px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    transform: rotate(-4deg) translateY(40px) scale(0.9);
+  }
+  .slide.style-polaroid.active {
+    opacity: 1;
+    transform: rotate(-3deg) translateY(0) scale(1);
+    z-index: 2;
+  }
+  .polaroid-caption {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: clamp(14px, 4vw, 18px);
+    color: #333;
+    font-weight: bold;
+    z-index: 5;
+    animation: fadeUp 0.8s 0.3s both;
+  }
+
+  /* 2. Glassmorphism Theme */
+  .slide.style-glass {
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(255, 46, 147, 0.25);
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transform: rotate(3deg) scale(0.8);
+  }
+  .slide.style-glass.active {
+    opacity: 1;
+    transform: rotate(2deg) scale(1);
+    z-index: 2;
+  }
+
+  /* 3. Neon Theme */
+  .slide.style-neon {
+    border: 3px solid #ff2e93;
+    border-radius: 16px;
+    box-shadow: 0 0 18px #ff2e93, inset 0 0 10px #ff2e93;
+    transform: translateX(80px) scale(0.95);
+  }
+  .slide.style-neon.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 2;
+  }
+
+  /* 4. Vintage Stamp Theme */
+  .slide.style-stamp {
+    border: 8px solid #f4eedb;
+    outline: 2px dashed #b5a482;
+    outline-offset: -5px;
+    filter: sepia(0.2) contrast(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-radius: 2px;
+    transform: rotate(-1.5deg) translateY(-30px);
+  }
+  .slide.style-stamp.active {
+    opacity: 1;
+    transform: rotate(-1deg) translateY(0);
+    z-index: 2;
+  }
+
+  /* 5. Modern Gold Theme */
+  .slide.style-minimalist {
+    border: 5px solid var(--gold);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+    transform: translateY(-40px) scale(0.95);
+  }
+  .slide.style-minimalist.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 2;
+  }
+
+  .footer {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 6px;
+    z-index: 3;
+  }
+
+  @keyframes shine { to { background-position: 200% center; } }
+  @keyframes pop {
+    0% { transform: scale(0.6) rotate(-4deg); opacity: 0; }
+    70% { transform: scale(1.08) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes float { 50% { transform: translateY(-8px) rotate(-2deg); } }
+
+  /* Desktop View - Split screen side-by-side card */
+  @media (min-width: 850px) {
+    body {
+      padding: 40px;
+    }
+    .wrap {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      max-width: 1100px;
+      height: 80vh;
+      max-height: 600px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 32px;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
+      text-align: left;
+    }
+    
+    .header-section {
+      align-items: flex-start;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      gap: 16px;
+    }
+    
+    .title {
+      font-size: 48px;
+      line-height: 1.2;
+    }
+    
+    .name {
+      font-size: 72px;
+      line-height: 1.1;
+    }
+    
+    .sub {
+      font-size: 16px;
+      max-width: 100%;
+    }
+    
+    .cake {
+      font-size: 56px;
+      margin: 10px 0;
+      align-self: flex-start;
+    }
+    
+    .wish-container {
+      flex: 1.2;
+      max-width: 550px;
+      height: 100%;
+      min-height: auto;
+      padding: 30px;
+      gap: 20px;
+      margin: 0;
+    }
+    
+    .wish {
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 100%;
+      margin: 0;
+    }
+    
+    .stage {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+      aspect-ratio: 4/3;
+      margin: 0;
+    }
+    
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      left: 40px;
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Balloons -->
+<div class="sky" aria-hidden="true">
+  <div class="balloon b1"></div><div class="balloon b2"></div>
+  <div class="balloon b3"></div><div class="balloon b4"></div>
+  <div class="balloon b5"></div><div class="balloon b6"></div>
+  <div class="balloon b7"></div><div class="balloon b8"></div>
+  <div class="balloon b9"></div><div class="balloon b10"></div>
+  <div class="balloon b11"></div><div class="balloon b12"></div>
+  <div class="balloon b13"></div><div class="balloon b14"></div>
+</div>
+
+<audio id="bgm" src="song.mp3" loop preload="auto"></audio>
+
+<main class="wrap">
+  <div class="header-section">
+    <h1 class="title">Happy Birthday</h1>
+    <div class="name">FARHAN</div>
+    <p class="sub">Another trip around the sun — and the world's a little brighter because of you. ✨</p>
+    <p class="sub">
+      May your year be filled with laughter, success, endless cake, and every dream you chase. Happy Birthday, Farhan! 🥳🎁
+    </p>
+    <div class="cake">🎂🎉</div>
+  </div>
+
+  <div class="wish-container">    
+    <div class="stage" id="slideshow-stage" aria-label="Photo slideshow"></div>
+  </div>
+  
+  <footer class="footer">Made with ❤️ for Farhan</footer>
+</main>
+
+<script>
+  function initBirthdayApp() {
+    const stage = document.getElementById('slideshow-stage');
+    const audio = document.getElementById('bgm');
+    
+    // Default fallback images currently in the folder
+    const defaultImages = [
+      'images/IMG_20251005_010637.jpg',
+      'images/IMG_5508.JPG'
+    ];
+    
+    const styles = ['style-polaroid', 'style-glass', 'style-neon', 'style-stamp', 'style-minimalist'];
+    let slideshowInterval = null;
+    
+    // Helper to start the slideshow
+    function startSlideshow(imgList) {
+      if (!imgList || imgList.length === 0) {
+        imgList = defaultImages;
+      }
+      
+      stage.innerHTML = '';
+      
+      const slideElements = [];
+      imgList.forEach((src, idx) => {
+        const slide = document.createElement('div');
+        const styleClass = styles[idx % styles.length];
+        slide.className = 'slide ' + styleClass + (idx === 0 ? ' active' : '');
+        slide.style.backgroundImage = `url('${src}')`;
+        
+        // Add dynamic captions for Polaroid frame
+        if (styleClass === 'style-polaroid') {
+          const captions = ['Farhan ✨', 'Surprise 🎂', 'Memories 📸', 'Moments ❤️', 'Happy Day 🎉'];
+          const captionText = captions[idx % captions.length];
+          const captionDiv = document.createElement('div');
+          captionDiv.className = 'polaroid-caption';
+          captionDiv.innerText = captionText;
+          slide.appendChild(captionDiv);
+        }
+        
+        stage.appendChild(slide);
+        slideElements.push(slide);
+      });
+      
+      if (slideElements.length <= 1) return;
+      
+      let currentIndex = 0;
+      if (slideshowInterval) clearInterval(slideshowInterval);
+      slideshowInterval = setInterval(() => {
+        slideElements[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slideElements.length;
+        slideElements[currentIndex].classList.add('active');
+      }, 5000); // Change image every 5 seconds
+    }
+    
+    // Attempt to dynamically fetch and parse all images in images/ folder
+    async function loadDynamicImages() {
+      try {
+        const response = await fetch('./images/');
+        if (!response.ok) {
+          throw new Error('Failed to fetch folder index');
+        }
+        const htmlText = await response.text();
+        
+        // Regex to parse image hrefs from directory index page
+        // Handles double/single/no quotes, spaces around '='
+        const imgRegex = /href\s*=\s*(?:"|')?([^"'>]+\.(?:jpg|jpeg|png|gif|webp|svg|bmp))(?:"|')?/gi;
+        let match;
+        const foundImages = [];
+        while ((match = imgRegex.exec(htmlText)) !== null) {
+          let imgPath = match[1];
+          // Unescape URI entities
+          imgPath = decodeURIComponent(imgPath);
+          // Clean up query parameters or hashes
+          imgPath = imgPath.split('?')[0].split('#')[0];
+          
+          if (imgPath.includes('images/')) {
+            const idx = imgPath.indexOf('images/');
+            foundImages.push(imgPath.substring(idx));
+          } else if (!imgPath.startsWith('http') && !imgPath.startsWith('//')) {
+            // Otherwise, if it's a relative path (e.g. just the filename), ensure it's prefixed with images/
+            const parts = imgPath.split('/');
+            const filename = parts[parts.length - 1];
+            foundImages.push('images/' + filename);
+          }
+        }
+        
+        // Deduplicate and filter empty
+        const uniqueImages = [...new Set(foundImages)].filter(img => img);
+        
+        if (uniqueImages.length > 0) {
+          console.log('Dynamic images found:', uniqueImages);
+          startSlideshow(uniqueImages);
+        } else {
+          console.log('No images found in listing, using fallback.');
+          startSlideshow(defaultImages);
+        }
+      } catch (err) {
+        console.warn('Dynamic image discovery failed (normal for file:// access). Using fallback list. Error:', err);
+        startSlideshow(defaultImages);
+      }
+    }
+    
+    // Start slideshow immediately on load
+    loadDynamicImages();
+    
+    // Autoplay & Unlock BGM Audio on first user interaction
+    let audioStarted = false;
+    function startAudio() {
+      if (audioStarted) return;
+      audioStarted = true;
+      
+      // Play audio BGM
+      audio.play().catch(e => console.log('Autoplay audio failed/blocked:', e));
+      
+      // Clean up event listeners once triggered
+      window.removeEventListener('click', startAudio);
+      window.removeEventListener('touchstart', startAudio);
+      window.removeEventListener('keydown', startAudio);
+    }
+    
+    window.addEventListener('click', startAudio);
+    window.addEventListener('touchstart', startAudio);
+    window.addEventListener('keydown', startAudio);
+  }
+
+  // Safe wrapper for DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBirthdayApp);
+  } else {
+    initBirthdayApp();
+  }
+</script>
+</body>
+</html>
