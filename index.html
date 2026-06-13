@@ -488,8 +488,8 @@
         const htmlText = await response.text();
         
         // Regex to parse image hrefs from directory index page
-        // Handles double/single/no quotes, spaces around '=', and case variants like jpg/JPG
-        const imgRegex = /href\s*=\s*(?:"|')?([^"'>]+\.(?:jpe?g|png|gif|webp|svg|bmp))(?:"|')?/gi;
+        // Handles double/single/no quotes, spaces around '=', and case variants like jpg/JPG and sob
+        const imgRegex = /href\s*=\s*(?:"|')?([^"'>]+\.(?:jpe?g|png|gif|webp|svg|bmp|sob))(?:"|')?/gi;
         let match;
         const foundImages = [];
         while ((match = imgRegex.exec(htmlText)) !== null) {
