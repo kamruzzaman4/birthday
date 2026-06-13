@@ -478,10 +478,10 @@
       }, 5000); // Change image every 5 seconds
     }
     
-    // Attempt to dynamically fetch and parse all images in images/ folder
+    // Attempt to dynamically fetch and parse all images in image/ folder
     async function loadDynamicImages() {
       try {
-        const response = await fetch('./images/');
+        const response = await fetch('./image/');
         if (!response.ok) {
           throw new Error('Failed to fetch folder index');
         }
@@ -499,14 +499,14 @@
           // Clean up query parameters or hashes
           imgPath = imgPath.split('?')[0].split('#')[0];
           
-          if (imgPath.includes('images/')) {
-            const idx = imgPath.indexOf('images/');
+          if (imgPath.includes('image/')) {
+            const idx = imgPath.indexOf('image/');
             foundImages.push(imgPath.substring(idx));
           } else if (!imgPath.startsWith('http') && !imgPath.startsWith('//')) {
-            // Otherwise, if it's a relative path (e.g. just the filename), ensure it's prefixed with images/
+            // Otherwise, if it's a relative path (e.g. just the filename), ensure it's prefixed with image/
             const parts = imgPath.split('/');
             const filename = parts[parts.length - 1];
-            foundImages.push('images/' + filename);
+            foundImages.push('image/' + filename);
           }
         }
         
