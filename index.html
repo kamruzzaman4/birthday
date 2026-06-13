@@ -421,7 +421,7 @@
     <div class="stage" id="slideshow-stage" aria-label="Photo slideshow"></div>
   </div>
   
-  <footer class="footer">Made with ❤️ for Farhan</footer>
+  <!-- <footer class="footer">❤️ Farhan ❤️</footer> -->
 </main>
 
 <script>
@@ -430,10 +430,7 @@
     const audio = document.getElementById('bgm');
     
     // Default fallback images currently in the folder
-    const defaultImages = [
-      'images/IMG_20251005_010637.jpg',
-      'images/IMG_5508.JPG'
-    ];
+    const defaultImages = Array.from({ length: 60 }, (_, i) => `images/${i + 1}.jpg`);
     
     const styles = ['style-polaroid', 'style-glass', 'style-neon', 'style-stamp', 'style-minimalist'];
     let slideshowInterval = null;
@@ -452,6 +449,9 @@
         const styleClass = styles[idx % styles.length];
         slide.className = 'slide ' + styleClass + (idx === 0 ? ' active' : '');
         slide.style.backgroundImage = `url('${src}')`;
+        slide.style.backgroundSize = 'contain';
+        slide.style.backgroundRepeat = 'no-repeat';
+        slide.style.backgroundPosition = 'center';
         
         // Add dynamic captions for Polaroid frame
         if (styleClass === 'style-polaroid') {
