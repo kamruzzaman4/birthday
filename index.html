@@ -430,7 +430,7 @@
     const audio = document.getElementById('bgm');
     
     // Default fallback images currently in the folder
-    const defaultImages = Array.from({ length: 40 }, (_, i) => `image/${i + 1}.jpg`);
+    const defaultImages = Array.from({ length: 40 }, (_, i) => `images_1/${i + 1}.jpg`);
     
     const styles = ['style-polaroid', 'style-glass', 'style-neon', 'style-stamp', 'style-minimalist'];
     let slideshowInterval = null;
@@ -478,10 +478,10 @@
       }, 5000); // Change image every 5 seconds
     }
     
-    // Attempt to dynamically fetch and parse all images in image/ folder
+    // Attempt to dynamically fetch and parse all images in images_1/ folder
     async function loadDynamicImages() {
       try {
-        const response = await fetch('./image/');
+        const response = await fetch('./images_1/');
         if (!response.ok) {
           throw new Error('Failed to fetch folder index');
         }
@@ -499,14 +499,14 @@
           // Clean up query parameters or hashes
           imgPath = imgPath.split('?')[0].split('#')[0];
           
-          if (imgPath.includes('image/')) {
-            const idx = imgPath.indexOf('image/');
+          if (imgPath.includes('images_1/')) {
+            const idx = imgPath.indexOf('images_1/');
             foundImages.push(imgPath.substring(idx));
           } else if (!imgPath.startsWith('http') && !imgPath.startsWith('//')) {
-            // Otherwise, if it's a relative path (e.g. just the filename), ensure it's prefixed with image/
+            // Otherwise, if it's a relative path (e.g. just the filename), ensure it's prefixed with images_1/
             const parts = imgPath.split('/');
             const filename = parts[parts.length - 1];
-            foundImages.push('image/' + filename);
+            foundImages.push('images_1/' + filename);
           }
         }
         
